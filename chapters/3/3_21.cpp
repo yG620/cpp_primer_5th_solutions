@@ -9,7 +9,6 @@ int main(int argc, const char **argv)
     vector<int> v_numbers;
     vector<int> v_sum;
 
-    char choose = 'y';
     int number = 0, i = 0, sum = 0;
 
     cout << "Please input integers: ";
