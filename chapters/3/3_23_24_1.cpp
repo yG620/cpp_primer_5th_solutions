@@ -13,7 +13,7 @@ int main(int argc, const char **argv)
     auto first = v.begin();
     auto middle = v.begin() + (end - begin) / 2;
 
-    while (middle != v.end() && *middle != value)
+    while (middle != v.end() && *middle != value) // 讨论前半部分和后半部分
     {
         if (value < *middle)
             end = middle;
@@ -23,7 +23,8 @@ int main(int argc, const char **argv)
         middle = (begin + end) / 2;
     }
 
-    cout << "location = " << middle - first << endl;
+    cout << "location = " << middle - first << endl; // 确定元素位置
 
     return 0;
-}
+}  
+

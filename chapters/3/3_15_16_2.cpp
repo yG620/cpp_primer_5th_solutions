@@ -7,9 +7,9 @@ int main(int argc, const char **argv)
 {
     vector<int> source(10, 0);
     unsigned grade;
-    
+
     while (cin >> grade)
-        if (grade <= 100)   
+        if (grade <= 100)
         {
             source[grade / 10]++;
         }
