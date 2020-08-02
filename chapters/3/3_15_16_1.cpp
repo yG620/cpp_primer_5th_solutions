@@ -14,7 +14,9 @@ int main(int argc, const char **argv)
 
     while (cin >> grade)
     {
+        
         if (grade <= 100)
+        {
             source[grade / 10]++;
 
         if (cin.get() == '\n') //cin.peek() == '\n'

@@ -22,6 +22,13 @@ int main(int argc, const char **argv)
         cout << *it + *(it + 1) << " ";
     }
     cout << endl;
+    
+    for (auto iter = v_numbers.cbegin(); iter != v_numbers.cend() - 1; iter++)
+    {
+        // cout << *iter << " ";
+        // cout << *(iter + 1) << endl;
+        // v_sum.push_back(*iter + *(iter + 1));
+    }
 
     // for (auto &element : v_sum)
     // {
