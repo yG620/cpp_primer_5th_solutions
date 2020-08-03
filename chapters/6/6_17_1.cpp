@@ -32,7 +32,7 @@ int main(int argc, const char **argv)
         cout << "After change: " << s << endl;
     }
     else
-        cout << "The string has no upper."<< endl;
+        cout << "The string has no upper." << endl;
 
     return 0;
 }
