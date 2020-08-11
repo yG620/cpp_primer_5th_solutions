@@ -1,0 +1,23 @@
+{
+  "name": "cpp_primer_5th_solutions",
+  "version": "1.0.0",
+  "description": "cpp primer 5th solutions",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yG620/cpp_primer_5th_solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yG620/cpp_primer_5th_solutions/issues"
+  },
+  "homepage": "https://github.com/yG620/cpp_primer_5th_solutions#readme"
+}
