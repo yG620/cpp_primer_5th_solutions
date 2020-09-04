@@ -4,14 +4,14 @@
 //
 //  Created by yG620 on 20/8/9
 //
+#include "ex7_11.hpp"
+
 #include <iostream>
 #include <string>
-#include "ex7_11.hpp"
 
 using namespace std;
 
-int main()
-{
+int main() {
     Sales_data item1;
     print(cout, item1) << endl;
 

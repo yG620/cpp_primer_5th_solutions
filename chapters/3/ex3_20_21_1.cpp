@@ -1,18 +1,16 @@
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-int main(int argc, const char **argv)
-{
+int main(int argc, const char **argv) {
     string s1("some string");
 
     // method 1
-    if (s1.begin() != s1.end())
-    {
-        auto iter = s1.begin(); //iter 一个迭代器的变量，表示 s 的第一个字符
-        *iter = toupper(*iter); //对字符进行操作
+    if (s1.begin() != s1.end()) {
+        auto iter = s1.begin();  // iter 一个迭代器的变量，表示 s 的第一个字符
+        *iter = toupper(*iter);  //对字符进行操作
     }
 
     // method 2

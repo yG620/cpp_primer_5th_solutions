@@ -7,23 +7,19 @@
  * */
 using namespace std;
 
-int main(int argc, const char **argv)
-{
+int main(int argc, const char **argv) {
     vector<int> source(11, 0);
     unsigned grade;
 
-    while (cin >> grade)
-    {
-        if (grade <= 100)
-            source[grade / 10]++;
+    while (cin >> grade) {
+        if (grade <= 100) source[grade / 10]++;
 
-        if (cin.get() == '\n') //cin.peek() == '\n'
+        if (cin.get() == '\n')  // cin.peek() == '\n'
         {
             break;
         }
     }
-    for (auto i : source)
-        cout << i << " ";
+    for (auto i : source) cout << i << " ";
     cout << endl;
 
     return 0;
