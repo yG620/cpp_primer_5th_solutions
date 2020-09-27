@@ -116,16 +116,22 @@
 
 ### 参数绑定
 
-- `lambda`表达式更适合在一两个地方使用的简单操作。
-- 如果是很多地方使用相同的操作，还是需要定义函数。
+- `lambda`表达式更适合在一两个地方使用的简单操作。如果是多个地方使用相同的操作或需要多条语句才能完成，还是需要定义函数。
 - 函数如何包装成一元谓词？使用参数绑定。
 - 标准库`bind`函数：
-  - 定义在头文件`functional`中，可以看做为一个通用的函数适配器。
+  - 定义在头文件`functional`中，可以看做为一个通用的函数适配器。它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表。
   - `auto newCallable = bind(callable, arg_list);`
   - 我们再调用`newCallable`的时候，`newCallable`会调用`callable`并传递给它`arg_list`中的参数。
   - `_n`代表第n个位置的参数。定义在`placeholders`的命名空间中。`using std::placeholder::_1;`
   - `auto g = bind(f, a, b, _2, c, _1);`，调用`g(_1, _2)`实际上调用`f(a, b, _2, c, _1)`
   - 非占位符的参数要使用引用传参，必须使用标准库`ref`函数或者`cref`函数。
+  - 用`bind`重排参数顺序：
+```cpp
+// sort on word length, shortest to longest
+sort(words.begin(), words.end(), isShorter);
+// sort on word length, longest to shortest
+sort(words.begin(), words.end(), bind(isShorter, _2, _1));
+```
 
 ## 再探迭代器
 
