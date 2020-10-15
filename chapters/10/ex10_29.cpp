@@ -7,7 +7,8 @@
 //  @Brief      > Write a program using stream iterators to read a text file
 // into a vector of strings.
 //
-//  @KeyPoint   1.
+//  @KeyPoint 1. When a istream iterator is constructed by default, a tail back iterator is obtained.
+//  @KeyPoint 2. A good way is to initialize the container with istream_iterator.
 
 #include <algorithm>
 #include <deque>
@@ -30,6 +31,7 @@ int main(int argc, char const* argv[]) {
     if (!in) {
         cout << "Failed to open input file! " << endl;
         exit(1);
+
     }
 
     // method 1

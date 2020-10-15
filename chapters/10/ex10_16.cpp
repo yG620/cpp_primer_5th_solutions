@@ -12,39 +12,44 @@
 #include <iostream>
 #include <vector>
 
+#include "../6/ex6_42.h"
+
 using namespace std;
 
-void ElemDups(vector<string>& svec) {
+void elemDups(vector<string>& svec) {
     sort(svec.begin(), svec.end());
     auto unique_end = unique(svec.begin(), svec.end());
     svec.erase(unique_end, svec.end());
 }
 
-template <typename Sequence> 
-void PrintSequence(Sequence const& seq) {
-    for (const auto& element : seq)
-        cout << element << " ";
+template <typename Sequence>
+void printSequence(Sequence const& seq) {
+    for (const auto& element : seq) cout << element << " ";
     cout << endl;
 }
 
-void Biggies(vector<string> &words, vector<string>::size_type sz) {
-    ElemDups(words);
-    stable_sort(words.begin(), words.end(), [](const string &lhs, const string &rhs)
-                                            {return lhs.size() < rhs.size();});
+void biggies(vector<string>& words, vector<string>::size_type sz) {
+    elemDups(words);
+    stable_sort(words.begin(), words.end(),
+                [](const string& lhs, const string& rhs) {
+                    return lhs.size() < rhs.size();
+                });
 
-    auto wc = find_if(words.begin(), words.end(), [sz] (string & word) 
-                                                    { return word.size() >= sz; });
-    cout << "Modied: ";
-    for_each(wc, words.end(),[](const string &word){cout << word << " ";});
+    auto wc = find_if(words.begin(), words.end(),
+                      [sz](const string& word) { return word.size() >= sz; });
+
+    auto count = words.end() - wc;
+    cout << count << " " << make_plural(count, "word", "s") << endl;
+
+    for_each(wc, words.end(), [](const string& word) { cout << word << " "; });
     cout << endl;
 }
 
 int main(int argc, char const* argv[]) {
-    vector<string> svec{"1234", "1234", "1234", "hi~", "alan", "alan", "cp"};
-    cout << "Raw: ";
-    PrintSequence(svec);
+    vector<string> svec{"respect", "respect", "respect", "hi~", "cp", "alan"};
+    printSequence(svec);
 
-    Biggies(svec, 3);
+    biggies(svec, 4);
     cout << endl;
 
     return 0;

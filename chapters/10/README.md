@@ -8,6 +8,14 @@ For such case, std::equal is going to compare the address value rather than the 
 So the result is not the same as std::string. Try to avoid coding this way. 
 Check [#227](https://github.com/Mooophy/Cpp-Primer/issues/227) for more detail.
 
+## 练习 10.8
+
+> We said that algorithms do not change the size of the containers over which they operate.
+> Why doesn’t the use of back_inserter invalidate this claim?
+
+* The ability to insert and delete elements depends on the algorithm, but on the ability of the iterators passed to them.
+
+
 ## 练习10.38
 
 > 列出5个迭代器类别，以及每类迭代器所支持的操作。

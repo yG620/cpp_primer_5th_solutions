@@ -4,9 +4,11 @@
 //
 //  Created by yG620 on 20/9/4
 //
-//  @Brief      > 删除偶数元素，复制每个奇数元素
-//  @KeyPoint   1.注意二者的些微差别
-//  @attention
+//  @Brief      > Assuming v is a vector<double>, what, if anything, is
+// wrong with calling accumulate(v.cbegin(), v.cend(), 0)?
+//
+//  @attention  1. The third accumulate parameter is the initial value of accumulate. 
+// It also determines the return type of the function and what addition operator is used in the function
 //
 // The reason is std::accumulate is a template function. The third parameter is _Tp __init
 // When "0" , an integer, had been specified here, the compiler deduced _Tp as

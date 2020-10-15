@@ -11,7 +11,7 @@
 // a space. Write the even numbers into the second file. Each of these values
 // should be placed on a separate line.
 //
-//  @KeyPoint   1.
+//  @KeyPoint   1. The processing of space is left to the ostream_iterator.
 
 #include <algorithm>
 #include <deque>
@@ -64,7 +64,7 @@ int main(int argc, char const* argv[]) {
     ofstream ofs_odd(argv[2]), ofs_even(argv[3]);
 
     oneFile2TwoFiles1(ifs, ofs_odd, ofs_even);
-    
+
     oneFile2TwoFiles2(ifs, ofs_odd, ofs_even);
 
     return 0;

@@ -4,11 +4,12 @@
 //
 //  Created by yG620 on 20/9/11
 //
-//  @Brief      > Use stream iterators, sort, and copy to read a sequence
+//  @Brief    > Use stream iterators, sort, and copy to read a sequence
 // of integers from the standard input, sort them, and then write them back to
 // the standard output.
 //
-//  @KeyPoint   1. longest to shortest: lambda method and bind method
+//  @KeyPoint 1. longest to shortest: use lambda method and bind method
+//  @KeyPoint 2. It's easy to the standard output with istream_iterator.
 
 #include <algorithm>
 #include <deque>
@@ -50,15 +51,14 @@ int main(int argc, char const* argv[]) {
 
     cout << "Sort results:    ";
     // output method 1
-    /* ostream_iterator<int> int_out_iter(cout, " ");  // Use Spaces as delimiters
-    for (auto elem : ivec) {
-        *int_out_iter++ = elem;
+    /* ostream_iterator<int> int_out_iter(cout, " ");  // Use Spaces as
+    delimiters for (auto elem : ivec) { *int_out_iter++ = elem;
     }
     cout << endl; */
 
     // output method 2
     copy(ivec.begin(), ivec.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
-    
+
     return 0;
 }

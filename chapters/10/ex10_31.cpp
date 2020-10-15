@@ -5,8 +5,7 @@
 //  Created by yG620 on 20/9/11
 //
 //  @Brief      >  Update the program from the previous exercise so that it
-// prints only the unique elements. Your program should use unqiue_copy (§
-// 10.4.1, p. 403).
+// prints only the unique elements. Your program should use unqiue_copy (§ 10.4.1, p. 403).
 //
 //  @KeyPoint   1.
 
@@ -31,12 +30,12 @@ int main(int argc, char const* argv[]) {
     istream_iterator<int> int_in_iter(cin), int_eof_iter;
 
     vector<int> ivec(int_in_iter, int_eof_iter);
-    cout << "Raw         results:     ";
+    cout << "Raw         results:      ";
     printSequence(ivec);
 
     sort(ivec.begin(), ivec.end());
 
-    cout << "unique copy results:     ";
+    cout << "unique copy results:      ";
 
     unique_copy(ivec.begin(), ivec.end(), ostream_iterator<int>(cout, " "));
     cout << endl;

@@ -18,7 +18,7 @@ using namespace std;
 using namespace std::placeholders;
 
 template <typename Sequence>
-void PrintSequence(Sequence const& seq) {
+void printSequence(Sequence const& seq) {
     for (const auto& element : seq) cout << element << " ";
     cout << endl;
 }
@@ -27,37 +27,37 @@ ostream& print(ostream& os, const string& word, char c) {
     return os << word << c;
 }
 
-void BindReferPara(ostream& os, vector<string>& words, char c) {
+void bindReferPara(ostream& os, vector<string>& words, char c) {
     cout << "Method 1: ";
-    for_each(words.begin(), words.end(),
-             [&os, c](const string& str) { os << str << c; });
+    for_each(words.begin(), words.end(), [&os, c](const string& str) { os << str << c; });
     cout << endl;
 
     cout << "Method 2: ";
-    // for_each(words.begin(), words.end(), bind(print, os, _1, ' ')); // compile error
+    // for_each(words.begin(), words.end(), bind(print, os, _1, ' ')); //
+    // compile error
     for_each(words.begin(), words.end(), bind(print, ref(os), _1, ' '));
     cout << endl;
 }
 
-bool CompareSize(const string & word, vector<string>::size_type sz) {
-    return word.size() <= sz ? true : false;
+bool compareSize(const string& word, vector<string>::size_type sz) {
+    return word.size() >= sz ? true : false;
 }
 
-size_t IsLesserThanOrEqualTo6(vector<string> &words, vector<string>::size_type sz) {
-    return count_if(words.begin(), words.end(),bind(CompareSize, _1, sz));                                                  
+size_t isLesserThanOrEqualTo6(vector<string>& words, vector<string>::size_type sz) {
+    return count_if(words.begin(), words.end(), bind(compareSize, _1, sz));
 }
 
 int main(int argc, char const* argv[]) {
     vector<string> svec = {"the",  "quick", "red",  "fox", "jumps",
                            "over", "the",   "slow", "red", "turtles"};
     cout << "Raw:      ";
-    PrintSequence(svec);
+    printSequence(svec);
 
     // exersize in book
-    BindReferPara(cout, svec, ' ');
+    bindReferPara(cout, svec, ' ');
 
     // exersize 10.22
-    cout << IsLesserThanOrEqualTo6(svec, 6) << endl;
+    cout << isLesserThanOrEqualTo6(svec, 6) << endl;
 
     return 0;
 }

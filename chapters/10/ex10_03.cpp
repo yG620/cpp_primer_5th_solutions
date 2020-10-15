@@ -4,9 +4,10 @@
 //
 //  Created by yG620 on 20/9/4
 //
-//  @Brief      > 删除偶数元素，复制每个奇数元素
+//  @Brief      > Use accumulate to sum the elements in a vector<int>.
+//
 //  @KeyPoint   1. auto sresult = accumulate(slist.begin(), slist.end(), "");
-//  @KeyPoint      error: cannot convert ‘std::__cxx11::basic_string<char>’ to ‘const char*’ in assignment
+
 
 #include <vector>
 #include <iostream>

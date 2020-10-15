@@ -14,8 +14,8 @@
 using namespace std;
 
 int main(int argc, char const* argv[]) {
-    auto SumFun = [](int a, int b) { return a + b; };
-    cout << "The sum is " << SumFun(1, 5) << endl;
+    auto sum = [](int a, int b) { return a + b; };
+    cout << "The sum is " << sum(1, 5) << endl;
 
     return 0;
 }

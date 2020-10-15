@@ -6,42 +6,50 @@
 //
 //  @Brief      > Rewrite the previous exercise to use stable_partition,
 //  which like stable_sort maintains the original element order in the paritioned sequence.
-//  @KeyPoint   1. auto count = words.end() - wc;
+//
+//  @KeyPoint   1. 
 
 #include <algorithm>
 #include <iostream>
 #include <vector>
 
+#include "../6/ex6_42.h"
+
 using namespace std;
 
-void ElemDups(vector<string>& svec) {
+void elemDups(vector<string>& svec) {
     sort(svec.begin(), svec.end());
     auto unique_end = unique(svec.begin(), svec.end());
     svec.erase(unique_end, svec.end());
 }
 
-template <typename Sequence> 
-void PrintSequence(Sequence const& seq) {
-    for (const auto& element : seq)
-        cout << element << " ";
+template <typename Sequence>
+void printSequence(Sequence const& seq) {
+    for (const auto& element : seq) cout << element << " ";
     cout << endl;
 }
 
-void Biggies(vector<string> &words, vector<string>::size_type sz) {
-    ElemDups(words);
-    auto wc = stable_partition(words.begin(), words.end(), [sz] (string & word) 
-                                                    { return word.size() < sz; });
-    cout << "Modied: ";
-    for_each(wc, words.end(),[](const string &word){cout << word << " ";});
+void biggies(vector<string>& words, vector<string>::size_type sz) {
+    elemDups(words);
+    cout << "Dups   : ";
+    printSequence(words);
+    auto wc = stable_partition(words.begin(), words.end(), [sz](string& word) { return word.size() >= sz; });
+    
+    auto count = wc - words.begin();
+    cout << count << " " << make_plural(count, "word", "s") << " of length longer than " << sz << endl;
+
+    cout << "Modied : ";
+    for_each(words.begin(), wc, [](const string& word) { cout << word << " "; });
     cout << endl;
 }
 
 int main(int argc, char const* argv[]) {
-    vector<string> svec = {"the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"};
-    cout << "Raw: ";
-    PrintSequence(svec);
+    vector<string> svec = {"the",  "quick", "red",  "fox", "jumps",
+                           "over", "the",   "slow", "red", "turtle"};
+    cout << "Raw    : ";
+    printSequence(svec);
 
-    Biggies(svec, 4);
+    biggies(svec, 5);
     cout << endl;
 
     return 0;

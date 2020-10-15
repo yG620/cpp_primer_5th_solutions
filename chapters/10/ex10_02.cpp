@@ -4,7 +4,9 @@
 //
 //  Created by yG620 on 20/9/4
 //
-//  @Brief      > 删除偶数元素，复制每个奇数元素
+//  @Brief      > Repeat the previous program, but read values into a list of
+// strings.
+//
 //  @KeyPoint    
 
 #include <vector>

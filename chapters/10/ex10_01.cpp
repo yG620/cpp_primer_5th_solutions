@@ -4,7 +4,11 @@
 //
 //  Created by yG620 on 20/9/4
 //
-//  @Brief      > 删除偶数元素，复制每个奇数元素
+//  @Brief      > The algorithm header defines a function named count
+// that, like find, takes a pair of iterators and a value. count returns a count
+// of how often that value appears. Read a sequence of ints into a vector
+// and print the count of how many elements have a given value.
+//
 //  @KeyPoint   
 
 #include <vector>

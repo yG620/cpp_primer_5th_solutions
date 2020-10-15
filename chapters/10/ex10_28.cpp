@@ -10,42 +10,42 @@
 // uses unique_copy to copy the unique elements from a vector into an
 // initially empty list.
 //
-//  @KeyPoint   1.  
+//  @KeyPoint   1.
 
 #include <algorithm>
+#include <deque>
 #include <iostream>
-#include <vector>
 #include <iterator>
 #include <list>
-#include <deque>
+#include <vector>
 
 using namespace std;
 
 template <typename Sequence>
-void PrintSequence(Sequence const& seq) {
+void printSequence(Sequence const& seq) {
     for (const auto& element : seq) cout << element << " ";
     cout << endl;
 }
- 
+
 int main(int argc, char const* argv[]) {
-    vector<int> ivec = { 1, 8, 3, 5, 7 };
+    vector<int> ivec = {1, 8, 3, 5, 7};
     vector<int> ivec1, ivec2;
     deque<int> deque3;
-    
+
     cout << "Raw:           ";
-    PrintSequence(ivec);
+    printSequence(ivec);
 
     cout << "Inserter:      ";
     copy(ivec.begin(), ivec.end(), inserter(ivec1, ivec1.begin()));
-    PrintSequence(ivec1);
+    printSequence(ivec1);
 
     cout << "BackInserter:  ";
     copy(ivec.begin(), ivec.end(), back_inserter(ivec2));
-    PrintSequence(ivec2);
+    printSequence(ivec2);
 
     cout << "FrontInserter: ";
     copy(ivec.begin(), ivec.end(), front_inserter(deque3));
-    PrintSequence(deque3);
+    printSequence(deque3);
 
     return 0;
 }

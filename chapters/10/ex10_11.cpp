@@ -4,9 +4,12 @@
 //
 //  Created by yG620 on 20/9/6
 //
-//  @Brief      >
-//  @KeyPoint   1. stable_sort() 第三个参数虽然是函数，当调用不同于往常。
-//  @KeyPoint   2. 注意 isShorter 的形参。
+//  @Brief      > Write a program that uses stable_sort and isShorter
+// to sort a vector passed to your version of elimDups. Print the vector to
+// verify that your program is correct.
+//
+//  @KeyPoint   1. 
+
 
 #include <algorithm>
 #include <iostream>

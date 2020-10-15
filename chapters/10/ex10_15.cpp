@@ -20,7 +20,6 @@ int main(int argc, char const* argv[]) {
     int i = 5;
 
     auto add = [i](int num) { return i + num; };
-
     cout << "The sum is " << add(1) << endl;
 
     return 0;

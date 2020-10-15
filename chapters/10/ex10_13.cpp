@@ -13,7 +13,7 @@
 // characters or more. Use that function to partition words. Print the elements
 // that have five or more characters.
 
-//  @KeyPoint   1. return s.size() >= 5 ? true : false; --> return s.size() >= 5;
+//  @KeyPoint   1. 
 
 #include <algorithm>
 #include <fstream>
@@ -23,23 +23,21 @@
 
 using namespace std;
 
-template <typename Sequence>
-void PrintSequence(Sequence const& seq) {
-    for (const auto& element : seq) cout << element << " ";
+inline void print(vector<string>::iterator begin, vector<string>::iterator end) {
+    for (auto iter = begin; iter != end; ++iter) cout << *iter << " ";
     cout << endl;
 }
 
-inline bool IsFiveOrMore(const string& s) { return s.size() >= 5 ? true : false; }
+inline bool isFiveOrMore(const string& s) {
+    return s.size() >= 5 ? true : false;
+}
 
 int main(int argc, char const* argv[]) {
-    vector<string> strvec = {"12378", "45678", "789", "123456"};
+    vector<string> strvec = {"12378", "5678", "789", "123456"};
+    print(strvec.begin(), strvec.end());
 
-    auto iter = partition(strvec.begin(), strvec.end(), IsFiveOrMore);
-
-    for (auto it = strvec.begin(); it != iter; ++it){
-        cout << *it << " ";
-    }
-    cout << endl;
+    auto iter = partition(strvec.begin(), strvec.end(), isFiveOrMore);
+    print(strvec.begin(), iter);
 
     return 0;
 }

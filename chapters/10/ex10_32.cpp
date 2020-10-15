@@ -10,7 +10,8 @@
 // arrange the transactions in order, and then use find and accumulate to
 // do the sum.
 //
-//  @KeyPoint   1. a error in print function. 2. a compile error assigning vec
+//  @KeyPoint   1. a error in print function. 
+//  @KeyPoint   2. a compile error assigning vec
 
 #include <algorithm>
 #include <deque>
@@ -38,7 +39,7 @@ int main(int argc, char const* argv[]) {
         cout << "Failed to open input file! " << endl;
         exit(1);
     }
-    
+
     // vector<Sales_item> vec(istream_iterator<Sales_item>(in),
     //                        istream_iterator<Sales_item>());
 
@@ -71,7 +72,7 @@ int main(int argc, char const* argv[]) {
     //     l = r;
     // }
 
-    // method 2 
+    // method 2
     auto beg = vec.cbegin(), end = beg;
     while (beg != vec.cend()) {
         end = find_if(beg, vec.cend(), [beg](const Sales_item& item) {

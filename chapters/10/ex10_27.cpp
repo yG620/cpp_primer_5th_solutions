@@ -11,6 +11,7 @@
 // initially empty list.
 //
 //  @KeyPoint   1. unique_copy: Only the first element of each group of equal elements is copied.
+//  @KeyPoint   2. use inserter function to add elements to container
 
 #include <algorithm>
 #include <iostream>
@@ -21,21 +22,22 @@
 using namespace std;
 
 template <typename Sequence>
-void PrintSequence(Sequence const& seq) {
+void printSequence(Sequence const& seq) {
     for (const auto& element : seq) cout << element << " ";
     cout << endl;
 }
  
 int main(int argc, char const* argv[]) {
-    vector<int> ivec = { 1, 8, 3, 3, 5, 5, 7, 7, 1 };
+    vector<int> ivec = { 1, 8, 3, 3, 5, 5, 7, 7, 1, 3 };
     list<int> slist;
 
     cout << "Raw:                   ";
-    PrintSequence(ivec);
+    printSequence(ivec);
 
     unique_copy(ivec.begin(), ivec.end(), inserter(slist, slist.begin()));
-    cout << "Unique copy to list:   ";
-    PrintSequence(slist);
+    cout << "unique copy to list:   ";
+
+    printSequence(slist);
 
     return 0;
 }

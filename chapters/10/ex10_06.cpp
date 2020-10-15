@@ -4,8 +4,10 @@
 //
 //  Created by yG620 on 20/9/5
 //
-//  @Brief      >
-//  @KeyPoint   1. fill_n 会自增
+//  @Brief      > Using fill_n, write a program to set a sequence of int
+// values to 0.
+//
+//  @KeyPoint   1.
 
 #include <algorithm>
 #include <iostream>
